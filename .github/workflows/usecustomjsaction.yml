@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: First js action step
       id: myjsaction
-      uses: chamindac/demojsaction@v1.1
+      uses: chamindac/demojsaction@v1
       with:
         name-of-you: 'Pushpa'
     # Use the output from the `myjsaction` step
