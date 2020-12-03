@@ -5,21 +5,21 @@ inputs:
     description: 'Your Name'
     required: true
     default: 'Chaminda'
-  your-country:  # id of input
-    description: 'Your Country'
-    required: true
-    default: 'Sri Lanka'
-outputs:
-  country: 
-    description: "Country Name"
-    value: ${{ steps.country-name-printer.outputs.country-name }}
+  # your-country:  # id of input
+  #   description: 'Your Country'
+  #   required: true
+  #   default: 'Sri Lanka'
+# outputs:
+#   country: 
+#     description: "Country Name"
+#     value: ${{ steps.country-name-printer.outputs.country-name }}
 runs:
   using: "composite"
   steps: 
     - run: echo Hello ${{ inputs.your-name }}.
       shell: bash
-    - id: country-name-printer
-      run: echo "::set-output name=country-name::your country is ${{ inputs.your-country }}"
-      shell: bash
+    # - id: country-name-printer
+    #   run: echo "::set-output name=country-name::your country is ${{ inputs.your-country }}"
+    #   shell: bash
     - run: ${{ github.action_path }}/helloworld.sh
       shell: bash
