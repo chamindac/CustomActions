@@ -1,0 +1,17 @@
+on: [workflow_dispatch]
+
+jobs:
+  composite_action_job:
+    runs-on: ubuntu-latest
+    name: My composite action use
+    steps:
+    - name: First composite action step
+      id: mycompositeaction
+      uses: chamindac/CustomActions/mycompositeaction@v1
+      with:
+        your-name: 'Pushpa'
+        your-country: 'Singapore'
+    
+    - name: Output from mycompositeaction
+      run: echo country-name ${{ steps.mycompositeaction.outputs.country-name }} 
+      shell: bash
